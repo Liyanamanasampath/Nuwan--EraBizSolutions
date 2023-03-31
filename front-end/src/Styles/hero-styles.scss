@@ -1,0 +1,55 @@
+$secondary-small: #aaabab;
+$secondary-drak: #272727;
+$action-button: #f94819;
+$color-blue: #0000ff;
+
+.ant-layout {
+    background-color: #fff !important;
+    padding: 0px 60px;
+}
+
+.text-align-left {
+    text-align: left;
+}
+.sm-para-color {
+    color: $secondary-small !important;
+    font-weight: 500;
+}
+.d-flex {
+    display: flex;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.align-items-center {
+    align-items: center;
+}
+.align-items-end {
+    align-items: flex-end;
+}
+.justify-content-space-between {
+    justify-content: space-between;
+}
+.pl-1 {
+    padding-left: 0.5rem;
+}
+.ant-form-item-label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.hero .ant-form-item input {
+    border-radius: 0px;
+    border: 1px solid $secondary-drak;
+}
+.ant-form-item ::placeholder {
+    color: $secondary-small;
+}
+
+.hero .ant-form-item button {
+    border-radius: 0px;
+    border: 0px;
+    background-color: $action-button;
+    font-weight: bold;
+    text-transform: capitalize;
+}
