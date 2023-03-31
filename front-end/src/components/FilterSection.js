@@ -50,7 +50,6 @@ class FilterSection extends Component {
 	this.getAllDoctors = this.getAllDoctors.bind(this);
 	this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleOpenModal() {
@@ -86,7 +85,7 @@ class FilterSection extends Component {
 	})
 	.then((response) => {
 		if (response) {
-			this.setState({ isAvailability: response.data });
+          console.log(response)
 		}
 	})
 	.catch((error) => {
@@ -123,7 +122,7 @@ class FilterSection extends Component {
 
   onSpecialistSearch = (value) => {
     this.setState({ SpecialistSearch: value }, () => {
-      this.getAllSecialist();
+      this.getAllSpecialist();
     });
   };
 
@@ -201,7 +200,7 @@ class FilterSection extends Component {
 	}
 	
 
-	getAllSecialist = () => {
+	getAllSpecialist = () => {
 		const { SpecialistSearch } = this.state;
 		axios
 		.get("http://127.0.0.1:8000/api/get-specialist", {
@@ -224,7 +223,7 @@ class FilterSection extends Component {
 	this.getAllDoctors();
     this.getAllCountries();
     this.getAllState();
-    this.getAllSecialist();
+    this.getAllSpecialist();
   }
 
   render() {
