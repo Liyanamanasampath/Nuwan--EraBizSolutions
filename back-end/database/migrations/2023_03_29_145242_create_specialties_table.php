@@ -14,7 +14,7 @@ class CreateSpecialtiesTable extends Migration
     public function up()
     {
         Schema::create('specialties', function (Blueprint $table) {
-            $table->unsignedBigInteger('specialty_id')->primary();
+            $table->id('specialty_id');
             $table->string('name');
             $table->timestamps();
         });

@@ -14,7 +14,7 @@ class CreateCountriesTable extends Migration
     public function up()
     {
         Schema::create('countries', function (Blueprint $table) {
-            $table->unsignedBigInteger('country_id')->primary();
+            $table->id('country_id');
             $table->string('name');
             $table->timestamps();
         });

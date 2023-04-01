@@ -14,7 +14,7 @@ class CreateHospitalsTable extends Migration
     public function up()
     {
         Schema::create('hospitals', function (Blueprint $table) {
-            $table->unsignedBigInteger('hospital_id')->primary();
+            $table->id('hospital_id');
             $table->string('name');
             $table->timestamps();
         });
