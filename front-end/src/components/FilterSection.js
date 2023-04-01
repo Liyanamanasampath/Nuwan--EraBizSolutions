@@ -3,6 +3,8 @@ import axios from "axios";
 import moment from 'moment';
 import Modal from 'react-modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'sweetalert2/dist/sweetalert2.css';
+import Swal from 'sweetalert2';
 
 import {
   Form,
@@ -35,7 +37,7 @@ class FilterSection extends Component {
 	  showModal: false,
 	  date: null,
 	  doctor: null,
-	  PatientName:null,
+	  patientName:null,
 	  time:null,
 	  isAvailability: false,
 	  FullteSearch: "",
@@ -59,16 +61,15 @@ class FilterSection extends Component {
   handleCloseModal() {
     this.setState({ showModal: false });
   }
-  onTime = (value) => {
-	console.log(value,'value')
-	const { time } = this.state
-	time = value; 
-    this.setState({ time});
+  onTime = (e) => {
+    this.setState({
+        time: e.target.value
+      });
   };
-  onName = (value) => {
-	const { PatientName } = this.state
-	PatientName = value; 
-    this.setState({ PatientName});
+  onName = (e) => {
+    this.setState({
+        patientName: e.target.value
+      });
   };
 
   handleSubmit=(event) =>{
@@ -85,7 +86,23 @@ class FilterSection extends Component {
 	})
 	.then((response) => {
 		if (response) {
-          console.log(response)
+            if(response.data){
+                Swal.fire({
+                    title: 'Thank You!',
+                    text: 'Your Appoiment is Confirmed.',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                  });
+            }
+            else{
+                Swal.fire({
+                    title: 'Warning!',
+                    text: 'Doctor already has an appointment scheduled',
+                    icon: 'error',
+                    button: 'OK',
+                  });
+            }
+
 		}
 	})
 	.catch((error) => {
@@ -243,17 +260,17 @@ class FilterSection extends Component {
           <form onSubmit={this.handleSubmit}>
             <Col className="mail-fliter" span={9}>
               <Form.Item label="Patient Name" required>
-                <Input.Search
+                <Input
                   placeholder="Input search text"
-                  onSearch={this.onName}
+                  onChange={this.onName}
                   className="w-300"
                 />
               </Form.Item>
 
               <Form.Item label="Time" required className="w-300">
-                <Input.Search
+                <Input
                   placeholder="Input search text"
-                  onSearch={this.onTime}
+                  onChange={this.onTime}
                   className="w-300"
 				  type="time"
                 />
