@@ -340,12 +340,7 @@ class FilterSection extends Component {
 				{Doctors.map((doctor) => (
                     <Card
                         key={doctor.id}
-                        cover={
-                            <img
-                                alt="example"
-                                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                            />
-                        }
+                        cover={<img alt="example" src={doctor.image} />}
                         actions={[
                             <CalendarOutlined onClick={this.handleIconClick} key="setting"/>,
                             <EditOutlined key="edit"/>,
