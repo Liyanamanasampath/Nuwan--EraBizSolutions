@@ -16,7 +16,7 @@ class ManageDoctorController extends Controller
     {
 
         $options = $this->_prepareSearchDataArray($request->get('params'));
-        $doctors = Doctor::select('hospitals.name as hospitalName', 'doctors.name as doctorName', 'doctors.doctor_id as doctor_id', 'specialties.name as specialistName', 'countries.name as countryName', 'states.name as stateName')
+        $doctors = Doctor::select('hospitals.name as hospitalName', 'doctors.name as doctorName', 'doctors.image as image', 'doctors.doctor_id as doctor_id', 'specialties.name as specialistName', 'countries.name as countryName', 'states.name as stateName')
             ->leftJoin('hospitals', 'doctors.hospital_id', '=', 'hospitals.hospital_id')
             ->leftJoin('countries', 'doctors.country_id', '=', 'countries.country_id')
             ->leftJoin('states', 'doctors.state_id', '=', 'states.state_id')

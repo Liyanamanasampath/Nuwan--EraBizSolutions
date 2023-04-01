@@ -38,9 +38,9 @@ class InsertDummyDataInToDatabaseSeeder extends Seeder
         ]);
 
         DB::table('doctors')->insert([
-            ['doctor_id' => 1, 'name' => 'John Smith', 'country_id' => 1, 'state_id' => 1, 'specialty_id' => 1, 'hospital_id' => 1, 'created_at' => now(), 'updated_at' => now()],
-            ['doctor_id' => 2, 'name' => 'Jane Doe', 'country_id' => 2, 'state_id' => 3, 'specialty_id' => 2, 'hospital_id' => 2, 'created_at' => now(), 'updated_at' => now()],
-            ['doctor_id' => 3, 'name' => 'Bob Johnson', 'country_id' => 1, 'state_id' => 2, 'specialty_id' => 3, 'hospital_id' => 3, 'created_at' => now(), 'updated_at' => now()],
+            ['doctor_id' => 1,  'image' => 'https://images.unsplash.com/photo-1666214280557-f1b5022eb634?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', 'name' => 'John Smith', 'country_id' => 1, 'state_id' => 1, 'specialty_id' => 1, 'hospital_id' => 1, 'created_at' => now(), 'updated_at' => now()],
+            ['doctor_id' => 2,  'image' => 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', 'name' => 'Jane Doe', 'country_id' => 2, 'state_id' => 3, 'specialty_id' => 2, 'hospital_id' => 2, 'created_at' => now(), 'updated_at' => now()],
+            ['doctor_id' => 3,  'image' =>'https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', 'name' => 'Bob Johnson', 'country_id' => 1, 'state_id' => 2, 'specialty_id' => 3, 'hospital_id' => 3, 'created_at' => now(), 'updated_at' => now()],
         ]);
         DB::table('appointments')->insert([
             [
