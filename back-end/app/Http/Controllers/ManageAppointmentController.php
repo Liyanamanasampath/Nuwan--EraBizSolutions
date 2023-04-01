@@ -13,10 +13,9 @@ class ManageAppointmentController extends Controller
         $appointments = Appointment::where('doctor_id', $requestParams['doctor'])
             ->where('date', $requestParams['date']);
         if(isset($requestParams['time']) && array_key_exists('time',$requestParams)){
-            $appointments =$appointments->where('time', '$time');
+            $appointments =$appointments->where('time', $requestParams['time']);
         }
         $appointments =$appointments->first();
-
         if (!$appointments) {
             $createArray = [
                 'patient_name' => $requestParams['patientName'],
