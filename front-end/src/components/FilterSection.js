@@ -242,7 +242,7 @@ class FilterSection extends Component {
           </div>
           <form onSubmit={this.handleSubmit}>
             <Col className="mail-fliter" span={9}>
-              <Form.Item label="Search" required>
+              <Form.Item label="Patient Name" required>
                 <Input.Search
                   placeholder="Input search text"
                   onSearch={this.onName}
