@@ -33,7 +33,7 @@ class ManageDoctorController extends Controller
         return [
             'searchByState' => isset($requestParams['Country']) && !empty($requestParams['Country']) ? $requestParams['Country'] : '',
             'searchByCountry' => isset($requestParams['State']) && !empty($requestParams['State']) ? $requestParams['State'] : '',
-            'searchBySpecialist' => isset($requestParams['Specialist']) && !empty($requestParams['Specialist']) ? $requestParams['Specialist'] : [],
+            'searchBySpecialist' => isset($requestParams['SpecialistData']) && !empty($requestParams['SpecialistData']) ? $requestParams['SpecialistData'] : [],
             'fullTextSearch' => isset($requestParams['SearchText']) && !empty($requestParams['SearchText']) ? $requestParams['SearchText'] : '',
         ];
     }
